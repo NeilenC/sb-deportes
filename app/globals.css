@@ -1,42 +1,53 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  margin: 0px;
+  /* background: linear-gradient(90deg, #D3D3D3, #1C1C1C); */
+
+  /* background-color: #2F2F2F ; */
+  background: white;
+
+
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+ /* negro carbon   #1C1C1C; */
+
+ /* rojo intenso #D72638 */
+
+ /* gris oscuro  #2F2F2F */
+
+ /* gris claro #D3D3D3 */
+
+ section {
+  position: relative;
+  width: 100%;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+#about, #contact, #services, #reviews {
+  background:  #D3D3D3 ; /* Fondo gris oscuro */
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  color: white; /* Texto blanco para contraste */
+  z-index: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+#about {
+  height: 100vh; /* Altura ajustable */
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+#services {
+  height: 270vh; /* Altura ajustable */
+  clip-path: polygon(0 4%, 100% 0, 100% 90%, 0 100%);
+
+}
+#reviews {
+  height: 100vh; /* Altura ajustable */
+
+}
+
+#contact {
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  height: 100vh; /* Altura ajustable */
+}
+.home{
+  padding: 10px;
+  position: static;
 }

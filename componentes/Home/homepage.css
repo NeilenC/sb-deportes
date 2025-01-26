@@ -1,0 +1,28 @@
+/* src/components/CarouselWithText/CarouselWithText.css */
+/* src/pages/HomePage.css */
+.home-container {
+    height: 100vh;
+  }
+  
+  
+  .carousel-with-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .text-container {
+    margin-top: 20px; /* Espaciado entre el carousel y el texto */
+    text-align: center; /* Alinear el texto al centro */
+  }
+  
+  .text-container h2 {
+    font-size: 24px; /* Tamaño de la fuente del título */
+    margin: 0; /* Sin margen por defecto */
+  }
+  
+  .text-container p {
+    font-size: 16px; /* Tamaño de la fuente del párrafo */
+    color: #333; /* Color del texto */
+  }
+  

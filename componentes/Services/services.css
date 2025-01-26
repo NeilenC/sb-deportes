@@ -1,0 +1,289 @@
+/* Estilos generales */
+.services-section {
+    padding:2rem;
+    text-align: center;
+}
+
+.services-title {
+    padding-top: 70px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    background: linear-gradient(90deg, #e63946, #1C1C1C); /* Rojo oscuro a gris suave */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slide-down 1s ease-out forwards;
+}
+
+
+.sports-list {
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sport-item {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border-radius: 0px 8px 8px 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sport-item:hover,
+.sport-item.selected { 
+    background-color: #e63946;
+    color: #fff;
+    border-radius: 0px 8px 8px 0px;
+    width: 180px;
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Estilo para las imágenes */
+.sports-title {
+    text-align: center;
+  text-transform: uppercase;
+  color: #e63946;
+  font-family: var(--font-geist-mono);
+  opacity: 0;
+  animation: slideDown 1s ease-out forwards;
+}
+
+/* Definición de la animación */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Sección de deportes (Imágenes) */
+.sports-section {
+    width: 100% !important; 
+    display: flex;
+    flex-direction: row;
+justify-content: space-between;
+}
+
+
+.sport-image {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.sport-image:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para el modal */
+/*  */
+
+/* Estilo para el contenido del modal */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen en el modal */
+.modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Botón de cerrar el modal */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background-color: #333;
+}
+
+.sport-image-container {
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+
+}
+
+
+.sport-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Agrupa las imágenes en filas de dos */
+    gap: 50px;  
+      justify-items: center; /* Centra las imágenes dentro de cada celda */
+    margin: 1rem auto;
+    padding-right: 45px;
+}   
+
+.sport-image {
+    width: 400px;
+    height: 300px; /* Altura más pequeña para ajustarse mejor */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+
+.sport-image:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para el modal */
+.modal-overlay {
+    position: sticky; /* Asegura que esté fijo en la pantalla */
+    left: 0;
+    bottom: 70px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+    position: relative;
+    max-width: 50%; /* Ajusta el modal al 70% del ancho */
+    max-height: 60%; /* Ajusta el modal al 90% de la altura */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen en el modal */
+.modal-image {
+    width: 100%; /* Hace que la imagen ocupe el ancho completo del modal */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    border-radius: 8px;
+}
+
+/* Botón de cerrar el modal */
+.close-modal {
+    position: absolute;
+    right: 10px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background-color: #333;
+}
+
+
+/* Animación de entrada suave con escala */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(3);
+    }
+}
+
+/* Efecto de fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.service-card {
+    background: #fff; /* Fondo blanco para las tarjetas */
+    border-radius: 12px;
+    padding: 2rem;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #ddd; /* Borde gris claro */
+    text-align: center;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Más sombra al hacer hover */
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #e63946; /* Rojo para los iconos */
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.service-icon:hover {
+    color: #333; /* Negro al hacer hover sobre los iconos */
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+    transition: color 0.3s ease;
+    font-family: var(--font-geist-mono)
+}
+
+.service-card:hover .service-title {
+    color: #e63946; /* Rojo al hacer hover sobre el título */
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #666; /* Gris para la descripción */
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-description {
+    color: #333; /* Descripción en negro al hacer hover */
+}

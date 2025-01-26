@@ -1,0 +1,153 @@
+/* Estilos generales */
+.reviews-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    border-top: 5px solid #e63946;
+}
+
+.reviews-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 40px;
+    gap: 2rem;
+}
+
+.review-card {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    background: linear-gradient(135deg, #ffffff, #f1f1f1);
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.review-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.review-image:hover {
+    transform: scale(1.05);
+}
+
+.review-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.team-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.review-rating {
+    margin-bottom: 1rem;
+    color: #f1faee;
+}
+
+.star {
+    color: #f39c12; /* Amarillo */
+    font-size: 1.5rem;
+}
+
+.empty {
+    color: #ddd; /* Gris claro para estrellas vacías */
+}
+
+.review-comment {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Opcional: Agregar un estilo para el contenedor de las estrellas */
+.review-rating .star {
+    font-size: 1.5rem;
+}
+
+/* Efectos para el botón de agregar review (si lo activas) */
+.add-review-button {
+    background-color: #e63946;
+    color: #fff;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 2rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+
+.review-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 1.5rem;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.review-image:hover {
+    transform: scale(2); /* Aumentar considerablemente el tamaño */
+    z-index: 2; /* Asegura que la imagen esté por encima del contenido */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3); /* Agregar una sombra más notoria */
+}
+
+.review-card {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    background: linear-gradient(135deg, #ffffff, #f1f1f1);
+    position: relative; /* Para que el z-index de la imagen funcione */
+    overflow: hidden; /* Evitar que la imagen se desborde fuera de la tarjeta */
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.add-review-button:hover {
+    background-color: #d62c1a;
+}
