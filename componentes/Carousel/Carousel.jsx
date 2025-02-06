@@ -21,16 +21,16 @@ const Carousel = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  const goToSlide = (index: number) => {
+  const goToSlide = (index) => {
     setCurrentIndex(index);
   };
 
   // Manejo de eventos táctiles
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const handleTouchStart = (e) => {
     setTouchStartX(e.touches[0].clientX);
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
+  const handleTouchMove = (e) => {
     setTouchEndX(e.touches[0].clientX);
   };
 
@@ -46,7 +46,7 @@ const Carousel = () => {
 
   // Manejo de teclas flecha izquierda/derecha para cambiar de imagen
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = (event) => {
       if (event.key === 'ArrowRight') goNext();
       if (event.key === 'ArrowLeft') goPrevious();
     };

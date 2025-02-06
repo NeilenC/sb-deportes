@@ -29,10 +29,10 @@ function Services() {
     },
   ];
 
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (image: string) => {
+  const openModal = (image) => {
     setSelectedImage(image);
     setIsModalOpen(true);
   };

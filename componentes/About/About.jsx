@@ -7,7 +7,7 @@ import foto1 from "../../public/resport-clinic-preparacion-fisica.jpg";
 import foto2 from "../../public/beneficios_de_jugar_futbol.webp";
 
 const About = () => {
-  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const itemsRef = useRef([]);
 
   useEffect(() => {
     const handleScroll = () => {

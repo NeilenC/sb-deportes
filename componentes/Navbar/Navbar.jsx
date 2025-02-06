@@ -33,15 +33,15 @@ const Navbar = () => {
     };
   }, []);
 
-  const smoothScrollTo = (target: any) => {
+  const smoothScrollTo = (target) => {
     const targetPosition =
       target.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
     const duration = 500;
-    let startTime: any = null;
+    let startTime = null;
 
-    const animation = (currentTime: any) => {
+    const animation = (currentTime) => {
       if (startTime === null) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
       const progress = Math.min(timeElapsed / duration, 1);
@@ -53,14 +53,14 @@ const Navbar = () => {
       }
     };
 
-    const easeInOutQuad = (t: any) => {
+    const easeInOutQuad = (t) => {
       return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
     };
 
     requestAnimationFrame(animation);
   };
 
-  const handleScrollTo = (id: string) => {
+  const handleScrollTo = (id) => {
     const section = document.getElementById(id);
     if (section) {
       smoothScrollTo(section);

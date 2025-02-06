@@ -2,12 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./sport-section.css";
 
-interface Sport {
-  name: string;
-  images: string[];
-}
 
-const sports: Sport[] = [
+
+const sports = [
   {
     name: "FUTBOL",
     images: ["/equipo.jpg", "/equipo2.jpg", "/rancagua.jpg", "/equipo2.jpg"],
@@ -26,20 +23,20 @@ const sports: Sport[] = [
   },
 ];
 
-const SportsSection: React.FC = () => {
-  const [selectedSportIndex, setSelectedSportIndex] = useState<number>(0);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedSport, setSelectedSport] = useState<Sport>(sports[0]);
+const SportsSection= () => {
+  const [selectedSportIndex, setSelectedSportIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedSport, setSelectedSport] = useState(sports[0]);
 
-  const sportImageContainerRef = useRef<HTMLDivElement | null>(null);
+  const sportImageContainerRef = useRef(null);
 
-  const handleSportClick = (index: number, sport: Sport) => {
+  const handleSportClick = (index, sport) => {
     setSelectedSport(sport);
     setSelectedSportIndex(index);
   };
 
-  const openModal = (image: string) => {
+  const openModal = (image) => {
     setSelectedImage(image);
     setIsModalOpen(true);
   };
