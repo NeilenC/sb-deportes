@@ -1,21 +1,7 @@
 body {
   margin: 0px;
-  /* background: linear-gradient(90deg, #D3D3D3, #1C1C1C); */
-
-  /* background-color: #2F2F2F ; */
-  background: white;
-
-
+  font-family: "Barlow Condensed", serif;
 }
-
-
- /* negro carbon   #1C1C1C; */
-
- /* rojo intenso #D72638 */
-
- /* gris oscuro  #2F2F2F */
-
- /* gris claro #D3D3D3 */
 
  section {
   position: relative;
@@ -27,20 +13,20 @@ body {
 }
 
 #about {
-  height: 100vh; /* Altura ajustable */
+  height: 100vh;
 }
 
 #services {
-  height: 270vh; /* Altura ajustable */
+  height: 270vh;
 }
 
 #reviews {
-  height: 100vh; /* Altura ajustable */
+  height: 100vh;
 
 }
 
 #contact {
-  height: 100vh; /* Altura ajustable */
+  height: 100vh;
 }
 .home{
   padding: 10px;

@@ -1,80 +1,78 @@
 /* Estilos generales */
 .services-section {
-    padding:2rem;
-    text-align: center;
+  padding: 2rem;
+  background-color: #202020c4;
+  text-align: center;
 }
 
 .services-section-container {
-    padding-top: 11px;
+  padding-top: 11px;
 }
 
 .services-title {
-    padding-top: 70px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 3rem;
-    background: linear-gradient(90deg, #e63946, #1C1C1C); /* Rojo oscuro a gris suave */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: slide-down 1s ease-out forwards;
+  padding-top: 80px;
+  font-size: 2.5rem;
+  font-family: "Barlow Condensed", serif;
+  font-weight: 200;
+  margin-bottom: 3rem;
+  color: #fcf7f7d2;
+  animation: slide-down 1s ease-out forwards;
 }
 
-
 .services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .service-card {
-    background: #fff; /* Fondo blanco para las tarjetas */
-    border-radius: 12px;
-    padding: 2rem;
-    width: 280px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    border: 1px solid #ddd; /* Borde gris claro */
-    text-align: center;
-    cursor: pointer;
+  background: #1f1d1d91; /* Fondo blanco para las tarjetas */
+  border-radius: 12px;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  cursor: pointer;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Más sombra al hacer hover */
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Más sombra al hacer hover */
 }
 
 .service-icon {
-    font-size: 3rem;
-    color: #e63946; /* Rojo para los iconos */
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
+  font-size: 3rem;
+  color: #e63946; /* Rojo para los iconos */
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
 }
 
 .service-icon:hover {
-    color: #333; /* Negro al hacer hover sobre los iconos */
+  color: #333; /* Negro al hacer hover sobre los iconos */
 }
 
 .service-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #333;
-    transition: color 0.3s ease;
-    font-family: var(--font-geist-mono)
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #e7e3e3f1;
+  transition: color 0.3s ease;
+  font-family: var(--font-geist-mono);
 }
 
 .service-card:hover .service-title {
-    color: #e63946; /* Rojo al hacer hover sobre el título */
+  color: #e63946; /* Rojo al hacer hover sobre el título */
 }
 
 .service-description {
-    font-size: 1rem;
-    color: #666; /* Gris para la descripción */
-    line-height: 1.6;
-    transition: color 0.3s ease;
+  font-size: 1.2rem;
+  color: #aaa9a9; /* Gris para la descripción */
+  line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
 .service-card:hover .service-description {
-    color: #333; /* Descripción en negro al hacer hover */
+  color: #b1adad; /* Descripción en negro al hacer hover */
 }

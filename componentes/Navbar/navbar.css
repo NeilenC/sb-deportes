@@ -42,8 +42,9 @@
 .menu a {
   text-decoration: none;
   color: white;
-  font-size: 16px;
-  font-weight: 500;
+  font-family: "Barlow Condensed", serif;
+  font-size: 20px;
+  font-weight: 300;
   text-transform: uppercase;
   transition: color 0.3s ease;
 }

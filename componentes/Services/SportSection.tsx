@@ -49,7 +49,7 @@ const SportsSection = () => {
 
   return (
       <div className='sport-section-container'>
-      <h2 className="sports-title">¿ en que nos especializamos ?</h2>
+      <h2 className="sports-title">¿ En qué nos especializamos ?</h2>
       <section className="sports-section">
         <ul className="sports-list">
           {sports.map((sport, index) => (
