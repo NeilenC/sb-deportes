@@ -1,11 +1,24 @@
-"use client";
-import { useEffect, useState } from "react";
+"use client"
+
+import { useState, useEffect } from "react";
+import { TiThMenu } from "react-icons/ti";
 import logo from "../../public/logo1.png";
 import Image from "next/image";
 import "./navbar.css";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden"; 
+    } else {
+      document.body.style.overflow = "auto"; 
+    }
+  }, [menuOpen]);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,14 +38,14 @@ const Navbar = () => {
       target.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
-    const duration = 500; 
+    const duration = 500;
     let startTime: any = null;
 
     const animation = (currentTime: any) => {
       if (startTime === null) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
-      const progress = Math.min(timeElapsed / duration, 1); // Asegura que el progreso no exceda 1
-      const ease = easeInOutQuad(progress); // Cambia el tipo de easing si lo deseas
+      const progress = Math.min(timeElapsed / duration, 1);
+      const ease = easeInOutQuad(progress);
       window.scrollTo(0, startPosition + distance * ease);
 
       if (progress < 1) {
@@ -51,6 +64,7 @@ const Navbar = () => {
     const section = document.getElementById(id);
     if (section) {
       smoothScrollTo(section);
+      setMenuOpen(false); // Cierra el menú al seleccionar una opción
     }
   };
 
@@ -60,7 +74,15 @@ const Navbar = () => {
         <div className="logo">
           <Image src={logo} alt="Logo" height={200} width={250} />
         </div>
-        <ul className="menu">
+
+        
+        <TiThMenu 
+        
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        
+        />
+        <ul className={`menu ${menuOpen ? "open" : ""}`}>
           <li>
             <a href="#home" onClick={() => handleScrollTo("home")}>
               Inicio
@@ -68,17 +90,17 @@ const Navbar = () => {
           </li>
           <li>
             <a href="#about" onClick={() => handleScrollTo("about")}>
-              Quiénes Somos
+              ¿Quiénes Somos?
             </a>
           </li>
           <li>
             <a href="#services" onClick={() => handleScrollTo("services")}>
-             Servicios
+              Servicios
             </a>
           </li>
           <li>
             <a href="#reviews" onClick={() => handleScrollTo("reviews")}>
-             Experiencias
+              Experiencias
             </a>
           </li>
           <li>

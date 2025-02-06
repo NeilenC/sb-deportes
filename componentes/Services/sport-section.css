@@ -52,16 +52,20 @@
   }
 }
 
-/* Sección de deportes (Imágenes) */
 .sports-section {
-  width: 100% !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.images-container{
+  width: 80%;
+}
+
 .sport-image {
   border-radius: 8px;
+  width: 100%;
+  
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -71,24 +75,19 @@
   transform: scale(1.05);
 }
 
-/* Estilo para el modal */
-/*  */
 
-/* Estilo para el contenido del modal */
 .modal-content {
   max-width: 90%;
   max-height: 90%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Imagen en el modal */
 .modal-image {
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
-/* Botón de cerrar el modal */
 .close-modal {
   position: absolute;
   top: 10px;
@@ -109,28 +108,24 @@
 .sport-image-container {
   text-align: center;
   animation: fadeIn 0.5s ease-in-out;
+  padding-left: 100px;
 }
 
 .sport-images-grid {
   display: grid;
-  grid-template-columns: repeat(
-    2,
-    1fr
-  ); /* Agrupa las imágenes en filas de dos */
-  gap: 50px;
-  justify-items: center; /* Centra las imágenes dentro de cada celda */
-  margin: 1rem auto;
-  padding-right: 45px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 90%;
 }
 
 .sport-image {
-  width: 400px;
-  height: 300px; /* Altura más pequeña para ajustarse mejor */
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Mantiene la relación de aspecto de las imágenes */
   cursor: pointer;
+  object-fit: cover; /* Asegura que la imagen se ajuste bien al contenedor sin distorsionarse */
 }
+
+
+
 
 .sport-image:hover {
   transform: scale(1.05);
@@ -138,57 +133,59 @@
 
 /* Estilo para el modal */
 .modal-overlay {
-  position: sticky; /* Asegura que esté fijo en la pantalla */
+  position: fixed;
+  top: 0;
   left: 0;
-  bottom: 70px;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center; /* Asegura que el modal se centra tanto horizontal como verticalmente */
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con mayor opacidad */
+  backdrop-filter: blur(5px); /* Agrega un desenfoque sutil al fondo */
+  animation: fadeIn 0.3s ease-in-out; /* Animación para la entrada suave */
 }
 
-/* Estilo para el contenido del modal */
+/* Estilo del contenido del modal */
 .modal-content {
   position: relative;
-  max-width: 50%; /* Ajusta el modal al 70% del ancho */
-  max-height: 60%; /* Ajusta el modal al 90% de la altura */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  overflow: hidden;
+  animation: scaleIn 0.3s ease-out; /* Animación para el contenido */
 }
 
 /* Imagen en el modal */
 .modal-image {
-  width: 100%; /* Hace que la imagen ocupe el ancho completo del modal */
-  height: auto; /* Mantiene las proporciones de la imagen */
+  width: 100%;
+  height: auto;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 /* Botón de cerrar el modal */
 .close-modal {
   position: absolute;
+  top: 10px;
   right: 10px;
+  background-color: rgba(228, 13, 31, 0.8);
+  color: #fff;
   border: none;
   border-radius: 50%;
-  font-size: 1rem;
+  padding: 10px;
+  font-size: 1.5rem;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .close-modal:hover {
-  background-color: #333;
+  background-color: #f44336; /* Cambio de color al pasar el ratón */
 }
 
-/* Animación de entrada suave con escala */
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(3);
-  }
-}
-
-/* Efecto de fadeIn */
+/* Animación de entrada suave */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -198,6 +195,19 @@
   }
 }
 
+/* Animación de entrada del contenido del modal */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
 @keyframes slide-down {
   0% {
     opacity: 0;
@@ -206,5 +216,94 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 480px) {
+  .sports-section {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
+
+  .services-first-title{
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .sport-image-container {
+    width: 100%;
+    overflow-x: scroll; /* Permite desplazamiento horizontal */
+    white-space: nowrap; /* Evita que las imágenes se vayan a otra línea */
+    display: flex; /* Hace que el contenido se alinee en fila */
+    padding: 10px 0; /* Agrega espacio alrededor para mejor visualización */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+  }
+
+  .sport-images-grid {
+    display: flex;
+    gap: 15px; /* Espacio entre imágenes */
+    flex-wrap: nowrap; /* Evita que las imágenes pasen a otra fila */
+  }
+
+  .sport-image {
+    width: 90%;
+    height: auto;
+    display: inline-block; /* Para que las imágenes estén en línea */
+  }
+
+  .sports-list {
+    list-style: none;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sport-item {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #333;
+    padding: 0.5rem 0.9rem;
+    background-color: #f7f7f7ea;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+  }
+
+  .sport-item:hover,
+  .sport-item.selected {
+    background-color: rgba(228, 13, 31, 0.801);
+    color: #fff;
+    border-radius: 8px;
+    width: 60px;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+.modal-overlay {
+  position: fixed; /* Cambiado a fixed para que se quede en el centro de la pantalla */
+  top: 0;           /* Centrado vertical */
+  left: 0;          /* Centrado horizontal */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Asegura que el modal se centra tanto horizontal como verticalmente */
+  z-index: 1000;      /* Asegura que el modal se muestre por encima de otros elementos */
+  background-color: rgba(0, 0, 0, 0.5); /* Agrega un fondo oscuro translúcido */
+}
+
+
+  .modal-content {
+    max-width: 90vw; /* Reducción para pantallas más pequeñas */
+    max-height: 90vh; /* Reducción para pantallas más pequeñas */
+  }
+
+  .modal-image {
+    max-height: 70vh; /* Ajusta la altura máxima para pantallas móviles */
   }
 }

@@ -1,15 +1,17 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Image from 'next/image'; 
+import Image from 'next/image';
 import rancagua from '../../public/rancagua.jpg';
 import equipo from '../../public/equipo.jpg';
 import equipo2 from '../../public/equipo2.jpg';
-import { IoIosArrowForward , IoIosArrowBack   } from 'react-icons/io'; // Importamos las flechas
+import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 import './carousel.css';
 
 const Carousel = () => {
   const images = [rancagua, equipo, equipo2];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
 
   const goNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -21,6 +23,25 @@ const Carousel = () => {
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+  };
+
+  // Manejo de eventos táctiles
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX - touchEndX > 50) {
+      // Deslizamiento hacia la izquierda (siguiente imagen)
+      goNext();
+    } else if (touchEndX - touchStartX > 50) {
+      // Deslizamiento hacia la derecha (imagen anterior)
+      goPrevious();
+    }
   };
 
   // Manejo de teclas flecha izquierda/derecha para cambiar de imagen
@@ -37,31 +58,36 @@ const Carousel = () => {
   }, [currentIndex]);
 
   return (
-    <div className="carousel">
+    <div
+      className="carousel"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <button className="carousel-button prev" onClick={goPrevious}>
-        <IoIosArrowBack size={15} /> 
+        <IoIosArrowBack size={15} />
       </button>
-      
+
       <Image
-        src={images[currentIndex]} 
+        src={images[currentIndex]}
         alt="Imagen del Carousel"
         className="carousel-image"
-        width={800} 
-        height={630} 
+        width={800}
+        height={630}
         objectFit="cover"
       />
-      
+
       <button className="carousel-button next" onClick={goNext}>
-        <IoIosArrowForward size={15} /> {/* Icono de flecha derecha */}
+        <IoIosArrowForward size={15} />
       </button>
-      
+
       {/* Puntos de navegación (Dots) */}
       <div className="carousel-dots">
         {images.map((_, index) => (
-          <span 
+          <span
             key={index}
-            className={`dot ${currentIndex === index ? 'active' : ''}`} 
-            onClick={() => goToSlide(index)} 
+            className={`dot ${currentIndex === index ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
           />
         ))}
       </div>

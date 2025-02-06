@@ -1,7 +1,10 @@
+import Footer from '../Footer/Footer';
 import './contact.css'
 
 const Contact = () => {
 return (
+  <div className='contact-container-footer'>
+
     <div className="contact-container">
     <div className="contact-title-container">
       <h2 className="contact-title">
@@ -23,7 +26,9 @@ return (
       </form>
     </div>
   </div>
+  <Footer/>
   
+  </div>
 )
 }
 

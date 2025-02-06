@@ -29,10 +29,8 @@ function Services() {
     },
   ];
 
-
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
 
   const openModal = (image: string) => {
     setSelectedImage(image);
@@ -46,9 +44,9 @@ function Services() {
 
   return (
     <div className="services-section-container">
-    
-<SportsSection/>
+      <h2 className="services-first-title">¿ En qué nos especializamos ?</h2>
 
+      <SportsSection />
 
       <section className="services-section">
         <h2 className="services-title">¿ Cómo lo hacemos ?</h2>

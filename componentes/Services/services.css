@@ -1,16 +1,21 @@
 /* Estilos generales */
 .services-section {
-  padding: 2rem;
-  background-color: #202020c4;
   text-align: center;
 }
 
+.services-first-title{
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 400;
+
+}
+
 .services-section-container {
-  padding-top: 11px;
+  padding-block: 100px;
 }
 
 .services-title {
-  padding-top: 80px;
+  padding-top: 100px;
   font-size: 2.5rem;
   font-family: "Barlow Condensed", serif;
   font-weight: 200;
@@ -21,21 +26,31 @@
 
 .services-container {
   display: flex;
+  gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
 }
 
 .service-card {
-  background: #1f1d1d91; /* Fondo blanco para las tarjetas */
-  border-radius: 12px;
-  padding: 2rem;
-  width: 280px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  text-align: center;
-  cursor: pointer;
+  padding: 10px;
+  background-color: #202020c4;
+border-radius: 10px;
+width: 350px;
+height: 250px;
+padding-top: 25px;
+
 }
+
+/* Asegurar que todas las imágenes dentro de servicios sean responsive */
+.service-card img {
+  width: 100%; /* La imagen se ajusta al ancho del contenedor */
+  max-width: 300px; /* Define un tamaño máximo */
+  height: auto; /* Mantiene la proporción */
+  display: block;
+  margin: 0 auto; /* Centrar la imagen */
+  border-radius: 8px; /* Opcional: Bordes redondeados */
+}
+
 
 .service-card:hover {
   transform: translateY(-10px);
@@ -75,4 +90,48 @@
 
 .service-card:hover .service-description {
   color: #b1adad; /* Descripción en negro al hacer hover */
+}
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .service-card img {
+    max-width: 250px; /* Reducir el tamaño en pantallas pequeñas */
+  }
+
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Más sombra al hacer hover */
+    }
+    
+    .service-icon {
+      font-size: 3rem;
+      color: #e63946; /* Rojo para los iconos */
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .service-icon:hover {
+      color: #333; /* Negro al hacer hover sobre los iconos */
+    }
+    
+    .service-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #e7e3e3f1;
+      transition: color 0.3s ease;
+      font-family: var(--font-geist-mono);
+    }
+    
+    .service-card:hover .service-title {
+      color: #e63946; /* Rojo al hacer hover sobre el título */
+    }
+    
+  }
+
+
+@media (max-width: 480px) {
+  .service-card img {
+    max-width: 200px; /* Más pequeño para móviles */
+  }
 }

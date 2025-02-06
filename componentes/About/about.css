@@ -1,6 +1,6 @@
 .about-container {
   display: flex;
-  direction: column;
+  flex-direction: column; /* Cambié la dirección a columna para permitir múltiples secciones */
   padding-top: 100px;
 }
 
@@ -8,34 +8,41 @@
   display: flex;
   opacity: 0;
   transition: all 0.5s ease;
+  margin-bottom: 40px;
 }
 
+.about-text p:first-of-type {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  color: #fffbfbef; 
+  background-color: #e63946; 
+  display: inline; 
+}
+
+
 .about-item.left {
-  flex-direction: row;
+  flex-direction: row; 
   text-align: left;
-  align-items: flex-start;
+  align-items: center; 
   transform: translateX(-30px);
 }
 
 .about-item.right {
-  flex-direction: row-reverse;
+  flex-direction: row-reverse; 
   text-align: right;
+  align-items: center; 
   transform: translateX(30px);
 }
-.about-text p:first-of-type {
-  font-size: 1.5rem;
-  color: #ffffffda;
-  font-weight: 400;
-  line-height: 1.5rem;
-  background-color: #e63946; /* Color del fibron */
-  padding: 0 4px; /* Espacio solo alrededor del texto */
-  display: inline; /* Solo el texto se verá resaltado */
-}
-
 
 .about-item.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+.about-content {
+  display: flex; 
+  align-items: center; 
 }
 
 .about-image {
@@ -44,25 +51,21 @@
   height: auto;
   border-radius: 8px;
   padding: 1rem;
-  object-fit: cover;
 }
 
 .about-text {
-  margin-left: 1rem;
-  margin-right: 1rem;
   font-size: 1.2rem;
   color: #ffffffda;
-  font-size: 1.2rem;
   text-align: justify;
-  padding: 1px 20px;
-  border-radius: 10px;
+  padding: 1px 15px;
 }
+
 
 .about-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 40px;
-  color: #ff5733; /* Color destacado */
+  color: #ff5733;
   animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -80,5 +83,56 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .about-content {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+  }
+  .about-container {
+    padding-top: 60px;
+  }
+
+  .about-item {
+    flex-direction: column !important; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 1.5rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-item.left,
+  .about-item.right {
+    transform: translateX(0);
+  }
+
+  .about-image {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .left-images,
+  .right-images {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .about-text p span.highlight {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+
+  .about-text p:first-of-type {
+    font-size: 1.5rem;
   }
 }

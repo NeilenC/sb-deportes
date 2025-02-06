@@ -1,34 +1,42 @@
 body {
-  margin: 0px;
-  font-family: "Barlow Condensed", serif;
+  margin: 0;
+  background-color: #2c2c2c;
+  font-family: 'Barlow Condensed';
 }
 
- section {
+section {
   position: relative;
   width: 100%;
+  background-color: #2c2c2c;
+  color: rgba(255, 255, 255, 0.712);
+  z-index: 0;
 }
 
-#about, #contact, #services, #reviews {
-  background: #202020c4;
+#about,
+#contact {
+  /* Usar min-height para permitir que se ajuste al contenido */
+  min-height: auto; 
 }
 
 #about {
-  height: 100vh;
+  /* Aquí no necesitamos 100vh porque el contenido puede variar */
+  min-height: 100vh;
 }
 
 #services {
-  height: 270vh;
+  background-color: #2c2c2c;
 }
 
 #reviews {
-  height: 100vh;
-
+  min-height: 100vh;
 }
 
 #contact {
-  height: 100vh;
+  min-height: 90vh;
 }
-.home{
+
+.home {
+  min-height: auto; 
   padding: 10px;
   position: static;
 }

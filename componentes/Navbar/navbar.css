@@ -4,15 +4,14 @@
   width: 100%;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.1);
-  /* transition: background-color 2s ease;  */
-  padding: 10px 50px 8px 10px ;
+  padding: 10px 50px 8px 10px;
   box-sizing: border-box;
+  transition: background-color 0.3s ease;
 }
 
 .navbar.scrolled {
-  /* background-color: rgba(0, 0, 0, 0.8);  */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #D72638
+  color: #ff0000;
 }
 
 /* Contenedor de los elementos */
@@ -20,6 +19,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 /* Estilo del logo */
@@ -33,6 +33,7 @@
   list-style: none;
   display: flex;
   gap: 50px;
+  transition: transform 0.3s ease;
 }
 
 .menu li {
@@ -42,14 +43,12 @@
 .menu a {
   text-decoration: none;
   color: white;
-  font-family: "Barlow Condensed", serif;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-weight: 300;
   text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
-/* Efecto hover de los enlaces */
 .menu a::after {
   content: '';
   position: absolute;
@@ -69,21 +68,79 @@
 }
 
 .menu a:hover {
-  color: #D72638; /* Un color destacable (ej: amarillo pastel) */
+  color: #D72638;
 }
 
-/* Animación de desvanecido para el navbar */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Botón del menú hamburguesa */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #D72638;
+  cursor: pointer;
+  font-size: 2rem;
 }
 
-.navbar-container {
-  animation: fadeIn 0.6s ease-out; /* Añade la animación de fade in */
+/* Mostrar el botón en móviles */
+@media (max-width: 768px) {
+
+  /* Estilos base del navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px 25px 8px 10px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 44px; /* Ajusta este valor para que esté más pegado */
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    z-index: 999;
+    transform: translateX(100%); /* Inicialmente oculto */
+    transition: transform 0.3s ease; /* Transición suave */
+    padding-block: 20px;
+  }
+
+  .navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro al hacer scroll */
+  }
+
+  .menu.open {
+    transform: translateX(0); /* Mostrar el menú */
+  }
+
+  .menu li {
+    text-align: right;
+    padding-right: 20px;
+  }
+
+  .menu a {
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .menu a:hover {
+    color: #D72638; /* Color al hacer hover */
+  }
+
+  .logo img {
+    align-items: center;
+    height: 50px; /* Ajusta el tamaño del logo en móviles */
+    width: auto;
+  }
 }

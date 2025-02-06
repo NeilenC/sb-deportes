@@ -1,73 +1,122 @@
 .carousel {
-    position: relative;
-    max-width: 1;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  }
-  
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  z-index: 10; 
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10; /* Asegura que los puntos estén sobre la imagen */
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dot.active {
+  background-color: grey;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+
   .carousel-image {
-    height: 1;
     width: 100%;
+    height: auto;
     display: block;
+    object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
     transition: transform 0.5s ease-in-out;
   }
-  
   .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 50%;
-    display: flex; /* Cambia el modelo de caja del botón */
-    align-items: center; /* Alinea verticalmente el contenido */
-    justify-content: center; /* Alinea horizontalmente el contenido */
-    width: 40px; /* Ajusta el tamaño del círculo */
-    height: 40px; /* Ajusta el tamaño del círculo */
+      width: 35px;
+      height: 35px;
   }
-  
-  .carousel-button.prev {
-    left: 10px;
-  }
-  
-  .carousel-button.next {
-    right: 10px;
-  }
-  
-  .carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
-  
-  
-  /* Estilo de los puntos de navegación (dots) */
+
   .carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
+      bottom: 10px;
   }
-  
+
   .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+      width: 10px;
+      height: 10px;
   }
-  
-  .dot:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 480px) {
+  .carousel-button {
+      width: 30px;
+      height: 30px;
   }
-  
-  .dot.active {
-    background-color: grey; /* Cambia el color del punto activo */
+
+  .dot {
+      width: 8px;
+      height: 8px;
   }
-  
+
+  .carousel-dots {
+      bottom: 5px;
+  }
+}

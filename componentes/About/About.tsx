@@ -29,24 +29,23 @@ const About = () => {
 
   const content = [
     {
-      image: foto1,
+      image: [foto1, foto2],
       text: [
-        "En SB Deportes, somos un equipo de apasionados por el deporte y el diseño, dedicados a crear camisetas deportivas personalizadas que reflejan la esencia de cada atleta.",
-        "Nuestra misión es ofrecer productos que no solo sobresalgan por su estilo, sino que también brinden comodidad y resistencia, acompañando a cada deportista en sus entrenamientos, competencias y momentos de triunfo.",
+        "En SB Deportes, nos dedicamos a crear diseños que reflejen la esencia del equipo.",
+        "Nuestra misión es ofrecer productos que no solo sobresalgan por su estilo, sino que también brinden comodidad y resistencia, acompañando a cada deportista en sus entrenamientos, competencias y momentos de triunfo.",
       ],
       position: "left",
     },
     {
-      image: foto2,
+      image: [foto2, foto2],
       text: [
-        "Nos diferencia nuestra atención al detalle y un enfoque personalizado que ponemos en cada proyecto, entendiendo que cada cliente tiene necesidades únicas.",
-        "En SB Deportes, trabajamos de la mano contigo para que tus camisetas sean exactamente como las imaginas, asegurándonos de que cada diseño sea una extensión de tu pasión por el deporte.",
-        "Ya sea que formes parte de un equipo, un club, o simplemente busques algo único, estamos aquí para hacer realidad tus ideas con dedicación, calidad y compromiso.",
+        "Nos diferencia nuestra atención al detalle y el enfoque personalizado que ponemos en cada proyecto",
+        "Trabajamos de la mano con vos para que tus camisetas sean exactamente como las imaginas, asegurándonos de que cada diseño sea una extensión de tu pasión por el deporte.",
+        "Ya sea que formes parte de un equipo, un club, o simplemente busques algo único, estamos a disposición para hacer realidad tus ideas con dedicación, calidad y compromiso.",
       ],
       position: "right",
     },
   ];
-  
 
   return (
     <div className="about-container">
@@ -58,36 +57,43 @@ const About = () => {
           }}
           className={`about-item ${item.position}`}
         >
-        {item.position === "left" ? (
-  <div className="about-content">
-    <Image
-      src={item.image}
-      alt={`Imagen ${index + 1}`}
-      className="about-image"
-    />
-    <div className="about-text">
-      {item.text.map((paragraph, idx) => (
-        <p key={idx}>{paragraph}</p>
-      ))}
-    </div>
-  </div>
-) : (
-  <div className="about-content">
-    <div className="about-text">
-      {item.text.map((paragraph, idx) => (
-        <p key={idx}>{paragraph}</p>
-      ))}
-    </div>
-    <Image
-      src={item.image}
-      width={400}
-      height={400}
-      alt={`Imagen ${index + 1}`}
-      className="about-image"
-    />
-  </div>
-)}
-
+          {item.position === "left" ? (
+            <div className="about-content">
+              {item.image.map((imageItem, index) => {
+                return (
+                  <Image
+                    key={index}
+                    src={imageItem}
+                    alt={`Imagen ${index + 1}`}
+                    className="about-image"
+                  />
+                );
+              })}
+              <div className="about-text">
+                {item.text.map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="about-content">
+              <div className="about-text">
+                {item.text.map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
+              </div>
+              {item.image.map((imageItem, index) => {
+                return (
+                  <Image
+                    key={index}
+                    src={imageItem}
+                    alt={`Imagen ${index + 1}`}
+                    className="about-image"
+                  />
+                );
+              })}
+            </div>
+          )}
         </div>
       ))}
     </div>

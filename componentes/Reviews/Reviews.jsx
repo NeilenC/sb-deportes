@@ -1,80 +1,100 @@
-'use client' 
+"use client";
 
-import React, { useState } from 'react';
-import './reviews.css';
+import React, { useState } from "react";
+import "./reviews.css";
 
 const reviewsData = [
-    {
-        id: 1,
-        teamName: 'Team A',
-        image: '/equipo2.jpg',
-        comment: 'Excelente calidad de camiseta, me encanta el diseño y la comodidad.',
-        rating: 5,
-    },
-    {
-        id: 2,
-        teamName: 'Team B',
-        image: '/equipo.jpg',
-        comment: 'El servicio fue muy rápido, y la camiseta tiene un acabado impecable.',
-        rating: 4,
-    },
-    {
-        id: 3,
-        teamName: 'Team C',
-        image: '/rancagua.jpg',
-        comment: 'La camiseta está genial.',
-        rating: 3,
-    },
+  {
+    id: 1,
+    teamName: "Team A",
+    image: "/equipo2.jpg",
+    comment:
+      "Excelente calidad de camiseta, me encanta el diseño y la comodidad.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    teamName: "Team B",
+    image: "/equipo.jpg",
+    comment:
+      "El servicio fue muy rápido, y la camiseta tiene un acabado impecable.",
+    rating: 4,
+  },
+  {
+    id: 3,
+    teamName: "Team C",
+    image: "/rancagua.jpg",
+    comment: "La camiseta está genial.",
+    rating: 3,
+  },
+  {
+    id: 1,
+    teamName: "Team A",
+    image: "/equipo2.jpg",
+    comment:
+      "Excelente calidad de camiseta, me encanta el diseño y la comodidad.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    teamName: "Team B",
+    image: "/equipo.jpg",
+    comment:
+      "El servicio fue muy rápido, y la camiseta tiene un acabado impecable.",
+    rating: 4,
+  },
+  {
+    id: 1,
+    teamName: "Team A",
+    image: "/equipo2.jpg",
+    comment:
+      "Excelente calidad de camiseta, me encanta el diseño y la comodidad.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    teamName: "Team B",
+    image: "/equipo.jpg",
+    comment:
+      "El servicio fue muy rápido, y la camiseta tiene un acabado impecable.",
+    rating: 4,
+  },
 ];
 
 const Reviews = () => {
-    const [reviews, setReviews] = useState(reviewsData);
+  const [reviews] = useState([...reviewsData, ...reviewsData]);
 
-    // Función para agregar una review ficticia temporalmente
-    const addFakeReview = () => {
-        const fakeReview = {
-            id: new Date().getTime(), // ID único basado en la hora
-            teamName: 'Team Ficticio',
-            image: 'https://via.placeholder.com/150',
-            comment: '¡Increíble calidad y atención! Totalmente recomendado.',
-            rating: 5,
-        };
+  return (
+    <section className="reviews-section">
 
-        setReviews([fakeReview, ...reviews]); // Agregar la review ficticia al principio
-    };
+      <div className="intro-text">
+        <p className="since-text">Desde 2013</p>
+        <hr className="reviews-divider" />
+      <h2 className="title">
+        Algunos testimonios <br />
+        de nuestros clientes
+      </h2>
+      </div>
 
-    return (
-<section className="reviews-section">
-  <div className="intro-text">
-    <p className="since-text">Desde 2012</p>
-    <hr className="divider" />
-  </div>
-  
-  <h2 className="title">
-    Algunos testimonios <br /> 
-    de nuestros clientes
-  </h2>
-
-  <div className="reviews-carousel">
-    <div className="reviews-wrapper">
-      {reviews.map((review) => (
-        <div className="review-card" key={review.id}>
-          <img
-            src={review.image}
-            alt={`Camiseta de ${review.teamName}`}
-            className="review-image"
-          />
-          <div className="review-text">
-            <h3 className="team-name">{review.teamName}</h3>
-            <p className="review-comment">{review.comment}</p>
-          </div>
+      <div className="reviews-carousel">
+        <div className="reviews-wrapper">
+          {reviews.map((review) => (
+            <div className="review-card" key={review.id}>
+              <img
+                src={review.image}
+                alt={`Camiseta de ${review.teamName}`}
+                className="review-image"
+              />
+              <div className="review-text">
+                <h3 className="team-name">{review.teamName}</h3>
+                <p className="review-comment">{review.comment}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-    );
+      </div>
+    </section>
+  );
 };
 
 export default Reviews;
