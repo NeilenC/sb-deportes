@@ -44,33 +44,36 @@ const Reviews = () => {
     };
 
     return (
-        <section className="reviews-section">
-            {/* <h2 className="reviews-title">Lo que dicen nuestros clientes</h2> */}
-            {/* <button onClick={addFakeReview} className="add-review-button">
-                Agregar Review Ficticia
-            </button> */}
-            <div className="reviews-container">
-                {reviews.map((review) => (
-                    <div className="review-card" key={review.id}>
-                        <img
-                            src={review.image}
-                            alt={`Camiseta de ${review.teamName}`}
-                            className="review-image"
-                        />
-                        <h3 className="team-name">{review.teamName}</h3>
-                        <div className="review-rating">
-                            {Array.from({ length: review.rating }, (_, index) => (
-                                <span key={index} className="star">★</span>
-                            ))}
-                            {Array.from({ length: 5 - review.rating }, (_, index) => (
-                                <span key={index} className="star empty">★</span>
-                            ))}
-                        </div>
-                        <p className="review-comment">{review.comment}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
+<section className="reviews-section">
+  <div className="intro-text">
+    <p className="since-text">Desde 2012</p>
+    <hr className="divider" />
+  </div>
+  
+  <h2 className="title">
+    Algunos testimonios <br /> 
+    de nuestros clientes
+  </h2>
+
+  <div className="reviews-carousel">
+    <div className="reviews-wrapper">
+      {reviews.map((review) => (
+        <div className="review-card" key={review.id}>
+          <img
+            src={review.image}
+            alt={`Camiseta de ${review.teamName}`}
+            className="review-image"
+          />
+          <div className="review-text">
+            <h3 className="team-name">{review.teamName}</h3>
+            <p className="review-comment">{review.comment}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
     );
 };
 

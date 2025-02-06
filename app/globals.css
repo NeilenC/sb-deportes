@@ -23,10 +23,7 @@ body {
 }
 
 #about, #contact, #services, #reviews {
-  background:  #D3D3D3 ; /* Fondo gris oscuro */
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-  color: white; /* Texto blanco para contraste */
-  z-index: 0;
+  background: #202020c4;
 }
 
 #about {
@@ -35,16 +32,14 @@ body {
 
 #services {
   height: 270vh; /* Altura ajustable */
-  clip-path: polygon(0 4%, 100% 0, 100% 90%, 0 100%);
-
 }
+
 #reviews {
   height: 100vh; /* Altura ajustable */
 
 }
 
 #contact {
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
   height: 100vh; /* Altura ajustable */
 }
 .home{

@@ -1,5 +1,109 @@
-.contact-container{
-    height:100vh;
-    padding-top: 85px;
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1c1c1c, #2c2c2c);
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Contenedor del título con los dividers */
+  .contact-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .contact-title {
+    font-size: 1.9rem;
+    color: rgba(248, 244, 244, 0.842);
+    max-width: 400px;
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  
+  .sb-text {
+    font-size: 2.35rem;
+    display: inline-block; /* Para respetar el flujo del texto */
+  }
+  
+  .highlight-text {
+    text-shadow: 0px 5px 50px rgba(255, 0, 0, 0.7);
+    padding: 2px 5px; /* Opcional: para mejorar la visibilidad */
+    display: inline-block;
+  }
+  
+  
+  /* Dividers en columna */
+  .contact-divider {
+    width: 1px; /* Más visible */
+    height: 280px; /* Que no sea demasiado grande */
+    background-color: white;
+  }
+  
 
+/* Estilos del formulario */
+.contact-form {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 10px;
+  width: 300px;
+  max-width: 300px;
+  /* box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); */
 }
+
+.form-container {
+  padding-top: 20px;
+}
+
+/* Inputs y textarea */
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Efectos al enfocar */
+/* .contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+} */
+/* Botón */
+.contact-form button {
+  
+    background:  rgba(228, 13, 31, 0.801) ;
+    color: rgba(248, 239, 239, 0.774);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Hover en el botón */
+  .contact-form button:hover {
+    background:  #202020c4;
+    transform: scale(1.05);
+  }
+  
+  /* Ajustes al texto "¡HABLEMOS!" */
+  .lets-talk-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(248, 244, 244, 0.842);
+  
+  }
