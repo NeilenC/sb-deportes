@@ -1,6 +1,6 @@
 // src/pages/HomePage.js
 import Carousel from '../Carousel/Carousel';
-import './homePage.css'; // Asegúrate de crear este archivo para los estilos
+import './homepage.css'; // Asegúrate de crear este archivo para los estilos
 
 const HomePage = () => {
   return (

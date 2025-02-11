@@ -6,7 +6,7 @@ import "./reviews.css";
 const reviewsData = [
   {
     id: 1,
-    teamName: "Team A",
+    teamName: "Hockey Club",
     image: "/equipo2.jpg",
     comment:
       "Excelente calidad de camiseta, me encanta el diseño y la comodidad.",
@@ -14,7 +14,7 @@ const reviewsData = [
   },
   {
     id: 2,
-    teamName: "Team B",
+    teamName: "Volley Club Arenas",
     image: "/equipo.jpg",
     comment:
       "El servicio fue muy rápido, y la camiseta tiene un acabado impecable.",
@@ -22,14 +22,14 @@ const reviewsData = [
   },
   {
     id: 3,
-    teamName: "Team C",
+    teamName: "Colegio Rancagua",
     image: "/rancagua.jpg",
     comment: "La camiseta está genial.",
     rating: 3,
   },
   {
     id: 1,
-    teamName: "Team A",
+    teamName: "Hockey Club",
     image: "/equipo2.jpg",
     comment:
       "Excelente calidad de camiseta, me encanta el diseño y la comodidad.",
@@ -37,7 +37,7 @@ const reviewsData = [
   },
   {
     id: 2,
-    teamName: "Team B",
+    teamName: "Volley Club Arenas",
     image: "/equipo.jpg",
     comment:
       "El servicio fue muy rápido, y la camiseta tiene un acabado impecable.",
@@ -45,7 +45,7 @@ const reviewsData = [
   },
   {
     id: 1,
-    teamName: "Team A",
+    teamName: "Hockey Club",
     image: "/equipo2.jpg",
     comment:
       "Excelente calidad de camiseta, me encanta el diseño y la comodidad.",
@@ -53,7 +53,7 @@ const reviewsData = [
   },
   {
     id: 2,
-    teamName: "Team B",
+    teamName: "Volley Club Arenas",
     image: "/equipo.jpg",
     comment:
       "El servicio fue muy rápido, y la camiseta tiene un acabado impecable.",
